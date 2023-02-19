@@ -1,0 +1,24 @@
+a, li {
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+}
+.nav {
+    background-color: rgb(63, 61, 61);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 10px 15px;
+    border-bottom: 2px solid;
+}
+.nav__brand {
+    font-size: 3rem;
+    padding-left: 25px;
+}
+.nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav__link {
+    font-size: 2rem;
+}

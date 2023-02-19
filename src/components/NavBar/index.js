@@ -1,3 +1,4 @@
+import "./navBar.css";
 import React from "react";
 import CarWidget from "../CarWidget";
 
@@ -6,7 +7,7 @@ export const NavBar = () => {
         <div className="container">
             <nav className="nav">
                 <div className="nav__brand">
-                    <a href="#" className="nav__link">CeluMusic</a>
+                    <a href="#" className="nav__logo">CeluMusic</a>
                 </div>
                 <ul className="nav__list">
                     <li>
