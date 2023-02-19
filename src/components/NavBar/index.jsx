@@ -1,4 +1,5 @@
 import React from "react";
+import CarWidget from "../CarWidget";
 
 export const NavBar = () => {
     return (
@@ -16,6 +17,9 @@ export const NavBar = () => {
                     </li>
                     <li>
                         <a href="#" className="nav__link">Accesorios</a>
+                    </li>
+                    <li>
+                        <a href="#" className="nav__link"><CarWidget/></a>
                     </li>
                 </ul>
             </nav>
