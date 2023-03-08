@@ -1,9 +1,9 @@
 import Item from "../Item";
 import React from "react";
 
-const ItemList = () => {
+const ItemList = ({data = []}) => {
     return (
-        <Item />
+        data.map(cover => <Item key={cover.id} info={cover} />)
     );
 }
 
