@@ -1,4 +1,6 @@
+import "./itemDetail.css"
 import React from "react";
+
 
 export const ItemDetail = ({ data }) => {
     return (

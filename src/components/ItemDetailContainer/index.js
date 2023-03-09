@@ -22,7 +22,7 @@ const products = [
         title: "Funda iPhone 14"
     },
     {
-        id: 5,
+        id: 4,
         image: "/assets/ms-iph.jpg",
         category: "cargador",
         title: "MagSafe Charger"
