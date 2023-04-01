@@ -1,42 +1,9 @@
 import "./itemListContainer.css";
 import ItemList from "../ItemList";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
-
-const products = [
-    {
-        id: 1,
-        image: "/assets/iph-11.jpg",
-        category: "fundas",
-        title: "Funda iPhone 11"
-    },
-    {
-        id: 2,
-        image: "/assets/iph-13.jpg",
-        category: "fundas",
-        title: "Funda iPhone 13"
-    },
-    {
-        id: 3,
-        image: "/assets/iph-14.jpg",
-        category: "fundas",
-        title: "Funda iPhone 14"
-    },
-    {
-        id: 4,
-        image: "/assets/ms-iph.jpg",
-        category: "cargadores",
-        title: "MagSafe Charger"
-    },
-    {
-        id: 5,
-        image: "/assets/lgn-1m.jpg",
-        category: "cargadores",
-        title: "Lightning to USB (1m)"
-    }
-
-];
 
 export const ItemListContainer = ({greeting}) => {
 
@@ -45,15 +12,15 @@ export const ItemListContainer = ({greeting}) => {
     const { categoriaId } = useParams();
 
     useEffect(() => {
-        const getData = new Promise(resolve => {
-            setTimeout(() => {
-                resolve(products);
-            }, 3000);
-        });
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, "products");
         if (categoriaId) {
-            getData.then(res => setData(res.filter(product => product.category === categoriaId)));
+            const queryFilter = query(queryCollection, where("category", "==", categoriaId),);
+            getDocs(queryFilter)
+                .then((res) => setData(res.docs.map((product) => ({id: product.id, ...product.data() })),),);
         } else {
-            getData.then(res => setData(res))
+            getDocs(queryCollection)
+                .then((res) => setData(res.docs.map((product) => ({id: product.id, ...product.data() })),),);
         }
         
     }, [categoriaId]);
@@ -69,6 +36,6 @@ export const ItemListContainer = ({greeting}) => {
             
         </>
     );
-}
+};
 
 export default ItemListContainer;

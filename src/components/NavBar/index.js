@@ -3,7 +3,7 @@ import React from "react";
 import CarWidget from "../CarWidget";
 import { NavLink } from "react-router-dom";
 
-export const NavBar = () => {
+const NavBar = () => {
     return (
         <div className="container">
             <nav className="nav">
@@ -24,6 +24,6 @@ export const NavBar = () => {
             </nav>
         </div>
     );
-}
+};
 
 export default NavBar;

@@ -1,58 +1,23 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { getFirestore, doc, getDoc } from "firebase/firestore"
 import ItemDetail from "../ItemDetail";
 import { useParams } from "react-router-dom";
 
-const products = [
-    {
-        id: 1,
-        image: "/assets/iph-11.jpg",
-        category: "covers",
-        title: "Funda iPhone 11"
-    },
-    {
-        id: 2,
-        image: "/assets/iph-13.jpg",
-        category: "covers",
-        title: "Funda iPhone 13"
-    },
-    {
-        id: 3,
-        image: "/assets/iph-14.jpg",
-        category: "covers",
-        title: "Funda iPhone 14"
-    },
-    {
-        id: 4,
-        image: "/assets/ms-iph.jpg",
-        category: "cargador",
-        title: "MagSafe Charger"
-    },
-    {
-        id: 5,
-        image: "/assets/lgn-1m.jpg",
-        category: "cargador",
-        title: "Lightning to USB (1m)"
-    }
 
-];
-
-export const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
     const [data, setData] =useState({});
 
-    const {detalleId} = useParams();
+    const { detalleId } = useParams();
 
     useEffect(() => {
-        const getData = new Promise(resolve => {
-            setTimeout (() => {
-                resolve(products);
-            }, 3000);
-        });
-        getData.then(res => setData(res.find(products => products.id === parseInt(detalleId))));
-    });
+       const querydb = getFirestore();
+       const queryDoc = doc(querydb, "products", detalleId);
+       getDoc(queryDoc).then((res) => setData({ id: res.id, ...res.data() }));
+    }, [detalleId]);
 
     return (
         <ItemDetail data={data} />
-    )
-}
+    );
+};
 
 export default ItemDetailContainer;
