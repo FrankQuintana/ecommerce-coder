@@ -20,4 +20,5 @@
 .nav__link {
     color: #fff;
     padding-right: 50px;
+    cursor: pointer;
 }
