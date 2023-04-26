@@ -4,7 +4,10 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-
+a, ul, li {
+    text-decoration: none;
+    list-style: none;
+}
 .title {
     text-align: center;
     font-size: 4rem;
