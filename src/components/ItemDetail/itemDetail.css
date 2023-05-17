@@ -1,0 +1,11 @@
+.detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    margin: auto;
+    padding: 50px;
+}
+.detail__img {
+    width: 30%;
+}
