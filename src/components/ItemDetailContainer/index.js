@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail';
 import { useParams } from 'react-router-dom';
+// import ItemCount from '../ItemCount';
 
 const covers = [
     {
@@ -45,7 +46,7 @@ export const ItemDetailContainer = () => {
         const getData = new Promise(resolve => {
             setTimeout (() => {
                 resolve(covers);
-            }, 2000);
+            }, 3000);
         });
         getData.then(res => setData(res.find(covers => covers.id === parseInt(detalleId))));
     });

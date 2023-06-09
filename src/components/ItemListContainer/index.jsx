@@ -4,6 +4,7 @@ import Title from '../Title';
 import ItemList from '../ItemList';
 import { useParams } from 'react-router-dom';
 
+
 const products = [
   {
       id: 1,
@@ -40,7 +41,7 @@ const products = [
 
 
 const ItemListContainer = () => {
-  const [data, setData] =useState([]);
+  const [data, setData] = useState([]);
 
     const { categoriaId } = useParams();
 
@@ -48,7 +49,7 @@ const ItemListContainer = () => {
         const getData = new Promise(resolve => {
             setTimeout(() => {
                 resolve(products);
-            }, 2000);
+            }, 3000);
         });
         if (categoriaId) {
             getData.then(res => setData(res.filter(covers => covers.category === categoriaId)));
@@ -58,11 +59,13 @@ const ItemListContainer = () => {
         
     }, [categoriaId]);
 
+
   return (
     <>
       <div className="item__container">
           <h1><Title greeting="CeluMusic" /></h1>
       </div>
+      
       <div className="listItem__container">
           <ItemList data={data} />
       </div>
