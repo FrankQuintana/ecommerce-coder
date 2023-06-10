@@ -1,13 +1,9 @@
-.icon {
-    font-size: 30px;
-}
+
 .number {
-    /* position: absolute;
-    top: 0px; */
-    padding: 2px 6px;
+    position: absolute;
+    top: 20px;
     border-radius: 50%;
-    background: #fff;
-    color: #000;
+    color: #fff;
     font-size: 1rem;
     font-weight: 600;
   }

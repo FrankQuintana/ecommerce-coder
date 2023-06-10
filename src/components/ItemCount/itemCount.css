@@ -1,14 +1,30 @@
 .counter {
-    width: fit-content;
-    background-color: #454545;
+    width: 300px;
+    background-color: #747373;
     margin: auto;
     padding: 10px;
     text-align: center;
-    color: #ffffff;
+    color: #000;
     border-radius: 20px;
+    font-size: 1.2rem;
 }
 .boton {
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin: 0px 15px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+.boton-ag {
     border-radius: 10px;
-    padding: 3px 5px;
-    margin: 5px;
+    margin-top: 10px;
+    padding: 5px 9px;
+    width: 250px;
+    border: none;
+    cursor: pointer;
+}
+.boton-ag:hover {
+    background-color: #454545;
+    border: #fff solid 2px;
+    color: #fff;
 }

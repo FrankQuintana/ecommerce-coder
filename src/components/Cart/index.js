@@ -10,8 +10,10 @@ const Cart = () => {
   if (cart.length === 0) {
     return(
       <>
-        <p>No hay productos</p>
-        <Link to='/'>Comprar productos</Link>
+        <div className="cart-cont">
+          <p className='text-cart'>No hay productos</p>
+          <Link to='/'><button className='btn-cart'>Comprar productos</button></Link>
+        </div>
       </>
     );
   }
@@ -21,7 +23,7 @@ const Cart = () => {
       {
         cart.map(product => <CartItem key={product.id} product={product} />)
       }
-      <p>Total: {totalPrice()}</p>
+      <h1 className='price'>Total: {totalPrice()}</h1>
     </>
   )
 }
