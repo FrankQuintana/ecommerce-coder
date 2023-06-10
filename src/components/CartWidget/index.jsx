@@ -1,10 +1,12 @@
 import React from 'react'
 import './cartWidget.css'
+import { useCartContext } from '../../context/CartContext'
 
 const CartWidget = () => {
+  const { totalProducts } = useCartContext();
   return (
     <i className="icon bi bi-bag-check">
-      <span className='number'>2</span>
+      <span className='number'>{totalProducts() || ""}</span>
     </i>
   )
 }

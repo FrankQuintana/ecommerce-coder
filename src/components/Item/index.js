@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 const Item = ({info}) => {
   return (
     <Link to={`/detalle/${info.id}`} className='case'>
-        <img src={info.image} alt={info.title} className='img' />
+        <img src={info.img} alt={info.title} className='img' />
         <p>{info.title}</p>
-        <p>$1500</p>
+        <p>{info.price}</p>
         {/* <ItemCount /> */}
     </Link>
   )
