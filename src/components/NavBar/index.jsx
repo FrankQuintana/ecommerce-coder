@@ -22,13 +22,11 @@ export const NavBar = () => {
           <li>
             <NavLink className='nav__link' to="/categoria/cargador" >Cargadores</NavLink>
           </li>
-          {/* <li>
-            <NavLink className='nav__link' to="/categoria/accesorio" >Accesorios</NavLink>
-          </li> */}
           <li>
             <NavLink className='nav__link' to="/cart" ><CartWidget /></NavLink>
           </li>
         </ul>
+        
       </nav>
     </div>
   )
