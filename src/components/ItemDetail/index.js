@@ -19,7 +19,7 @@ export const ItemDetail = ( { data } ) => {
             <img className="detail__img" src={data.img} alt={data.title} />
             <div className="content">
                 <h1 className='title-detail'>{data.title}</h1>
-                <h2>Precio: ${data.price}</h2>
+                <h2 className='text-detail'>Precio: ${data.price}</h2>
                 {
                   goCart
                   ? <Link to="/cart"><button className='boton-detail'>Terminar compra</button></Link>
