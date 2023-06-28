@@ -1,12 +1,10 @@
 import React, {useState, useContext} from 'react'
-// import { Children } from 'react';
 const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext)
 
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
-    console.log('carrito: ', cart);
 
     // aderir a cart
 	const addProduct = (item, quantity) => {

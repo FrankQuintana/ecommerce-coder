@@ -10,7 +10,7 @@ export const NavBar = () => {
   return (
     <div className='container'>
       <nav className='nav'>
-        <NavLink className='nav-logo' to="/" onClick={closeMenu} >CeluMusic</NavLink>
+        <NavLink className='nav-logo' to="/" onClick={closeMenu} >CeluMusic<i class="bi bi-apple"></i></NavLink>
         <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'bi bi-x' : 'bi bi-list'} />
         </div>

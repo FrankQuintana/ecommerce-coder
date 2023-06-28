@@ -3,6 +3,7 @@ import "./cart.css"
 import { useCartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import CartItem from '../CartItem'
+import Formulary from '../Formulary/Index'
 
 const Cart = () => {
   const {cart, totalPrice} = useCartContext();
@@ -24,6 +25,7 @@ const Cart = () => {
         cart.map(product => <CartItem key={product.id} product={product} />)
       }
       <h1 className='price'>Total: {totalPrice()}</h1>
+      <Formulary />
     </>
   )
 }
